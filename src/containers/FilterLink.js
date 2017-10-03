@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import { setVisibilityFilter } from '../actions';
 import Link from '../components/Link';
 
@@ -8,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: () => {
-      dispatch(setVisibilityFilter(ownProps.filter))
+      // dispatch(push('/page/1'));
+      dispatch(setVisibilityFilter(ownProps.filter));
     }
   });
 

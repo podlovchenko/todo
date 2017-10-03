@@ -13,10 +13,10 @@ const getVisibleTodos = (todos, filter) => {
   }
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, route) => {
   return {
     todos: getVisibleTodos(state.todos, state.visibilityFilter.filter),
-    page: state.visibilityFilter.page,
+    page: route.match.params.page,
   };
 };
 

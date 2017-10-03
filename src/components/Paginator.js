@@ -1,19 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Paginator = ({ amount, onClick }) => {
+const Paginator = ({ amount }) => {
   const newsTemplate = [];
 
   for (let i = 0; i < amount; i++) {
     newsTemplate[i] = (
-      <a
+      <Link
         key={i + 1}
-        onClick={(e) => {
-          e.preventDefault();
-          onClick(i + 1);
-        }}
+        to={{ pathname: `/page/${i + 1}` }}
       >
         {i + 1}
-      </a>
+      </Link>
     );
   }
 

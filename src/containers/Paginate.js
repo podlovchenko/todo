@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import Paginator from '../components/Paginator';
-import { setPage } from '../actions';
 
 const getAmountTodos = (todos, filter) => {
   switch (filter) {
@@ -17,12 +16,6 @@ const mapStateToProps = state => ({
   amount: getAmountTodos(state.todos, state.visibilityFilter.filter),
 });
 
-const mapDispatchToProps = dispatch => ({
-  onClick: (page) => {
-    dispatch(setPage(page));
-  },
-});
-
-const Paginate = connect(mapStateToProps, mapDispatchToProps)(Paginator);
+const Paginate = connect(mapStateToProps)(Paginator);
 
 export default Paginate;

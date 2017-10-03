@@ -9,7 +9,7 @@ const App = () => (
   <BrowserRouter>
     <div>
       <AddTodo />
-      <VisibleTodoList />
+      <Route path="/page/:page" component={VisibleTodoList} />
       <Paginate />
       <Footer />
     </div>
