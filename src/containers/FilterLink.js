@@ -3,13 +3,14 @@ import { push } from 'react-router-redux';
 import { setVisibilityFilter } from '../actions';
 import Link from '../components/Link';
 
-const mapStateToProps = (state, ownProps) => ({
-    active: ownProps.filter === state.visibilityFilter
-  });
+const mapStateToProps = (state, ownProps) => {
+  return ({
+    active: ownProps.filter === state.visibilityFilter});
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: () => {
-      // dispatch(push('/page/1'));
+      dispatch(push('/'));
       dispatch(setVisibilityFilter(ownProps.filter));
     }
   });

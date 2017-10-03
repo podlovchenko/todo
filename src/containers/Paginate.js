@@ -12,9 +12,11 @@ const getAmountTodos = (todos, filter) => {
   }
 };
 
-const mapStateToProps = state => ({
-  amount: getAmountTodos(state.todos, state.visibilityFilter.filter),
-});
+const mapStateToProps = (state) => {
+  return ({
+    amount: getAmountTodos(state.todos, state.visibilityFilter.filter),
+  });
+};
 
 const Paginate = connect(mapStateToProps)(Paginator);
 
