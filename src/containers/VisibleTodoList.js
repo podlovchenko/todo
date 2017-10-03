@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import { toggleTodo } from '../actions';
 import TodoList from '../components/TodoList';
 
@@ -23,6 +24,9 @@ const mapStateToProps = (state, route) => {
 const mapDispatchToProps = (dispatch) => ({
     onTodoClick: id => {
       dispatch(toggleTodo(id))
+    },
+    onShow: id => {
+      dispatch(push(`/task/${id}/`));
     }
   });
 

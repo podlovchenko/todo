@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Todo from './Todo';
 
-const TodoList = ({ todos, page, onTodoClick }) => {
+const TodoList = ({ todos, page, onTodoClick, onShow}) => {
   const pageTodos = todos.slice((page - 1) * 3, page * 3);
   return (
     <ul>
       {pageTodos.map(todo => (
-        <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
+        <Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} show={() => onShow(todo.id)} />
       ))}
     </ul>
   );
