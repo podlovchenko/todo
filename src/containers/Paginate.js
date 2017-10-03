@@ -14,12 +14,12 @@ const getAmountTodos = (todos, filter) => {
 };
 
 const mapStateToProps = state => ({
-  amount: getAmountTodos(state.todos, state.visibilityFilter),
+  amount: getAmountTodos(state.todos, state.visibilityFilter.filter),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClick: (id) => {
-    dispatch(setPage(id));
+  onClick: (page) => {
+    dispatch(setPage(page));
   },
 });
 

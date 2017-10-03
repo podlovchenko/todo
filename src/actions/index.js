@@ -22,7 +22,7 @@ export const toggleTodo = id => ({
   id,
 });
 
-export const setPage = id => ({
-  type: 'PAGE',
-  id,
+export const setPage = page => ({
+  type: 'SET_PAGE',
+  page,
 });

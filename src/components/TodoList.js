@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Todo from './Todo';
 
 const TodoList = ({ todos, page, onTodoClick }) => {
-  console.log(page);
   const pageTodos = todos.slice((page - 1) * 3, page * 3);
   return (
     <ul>
